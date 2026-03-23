@@ -1,0 +1,6 @@
+# Test sans blocage
+/bin/sleep 2 &
+jobs
+# On laisse le temps au shell de traiter
+SLEEP 1
+jobs

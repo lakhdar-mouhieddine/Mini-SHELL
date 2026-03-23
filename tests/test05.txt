@@ -1,0 +1,4 @@
+#
+# test05.txt - Tester la gestion des pipes
+#
+cat /etc/passwd | cut -d: -f1 | sort

@@ -1,0 +1,21 @@
+# test_jobs2.txt - Manipulation FG/BG et signaux
+# 1. Lancer un sleep au premier plan
+/bin/sleep 5
+# Laisser le temps au processus de démarrer
+SLEEP 1
+# 2. Envoyer SIGTSTP (Ctrl+Z) au shell pour stopper le FG
+TSTP
+# 3. Laisser le temps au handler SIGCHLD de mettre à jour le tableau
+SLEEP 1
+jobs
+# 4. Basculer le job stoppé en arrière-plan
+bg %1
+SLEEP 1
+jobs
+# 5. Ramener au premier plan
+fg %1
+SLEEP 1
+# 6. Envoyer SIGINT (Ctrl+C) pour tuer le job
+INT
+SLEEP 1
+jobs
